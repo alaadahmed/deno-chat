@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h, IS_BROWSER, useCallback, useEffect, useState } from "../deps.ts";
+import { h, useCallback, useEffect, useState } from "../deps.ts";
 
 interface Message {
   text: string;
@@ -41,7 +41,7 @@ export default function Home() {
       <input
         type="text"
         value={text}
-        onChange={(evt) => setText(evt.target.value)}
+        onChange={(event) => setText((event.target as HTMLInputElement).value)}
       />
       <button onClick={onSendMessage}>Add</button>
     </div>
